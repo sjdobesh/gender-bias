@@ -22,15 +22,18 @@ github: https://github.com/marionbartl/gender-bias-BERT
 ### Context embedding vs static embedding: why do we want context embeddings?
 Static embeddings are how a model processes a word on its own. Context embeddings show how a model processes a string of words to generate context. This is very important for detecting bias as this is highly context dependent. Words like 'queer', 'disabled', or 'black' can have very different implications based on who is using them and in reference to what. Contextual embeddings help capture this relationship.
 
-**Further reading**: [From Static Embedding to Contextualized Embedding](https://ted-mei.medium.com/from-static-embedding-to-contextualized-embedding-fe604886b2bc)
+* [**From Static Embedding to Contextualized Embedding**](https://ted-mei.medium.com/from-static-embedding-to-contextualized-embedding-fe604886b2bc)
+
+
+### What is masked language modeling?
+Masked language modeling is where we take some model trained on the english language and the "mask" out words and ask the model to guess them. It is like a fill in the blank question. We can learn alot about these models based on what liklihoods it assigns different words.
+* [**Masked Language Modeling with Bert**](https://towardsdatascience.com/masked-language-modelling-with-bert-7d49793e5d2c)
+
 
 ### How do transformers make an embedding?
 
-**Further reading**: [Transformer Text Embeddings](https://www.baeldung.com/cs/transformer-text-embeddings)
+* [**Transformer Text Embeddings**](https://www.baeldung.com/cs/transformer-text-embeddings)
 
-### What is masked language modeling?
-Fill in the mask!
-* [**Masked Language Modeling with Bert**](https://towardsdatascience.com/masked-language-modelling-with-bert-7d49793e5d2c)
 
 ### How can we measure an embedding?
 - [**Cosine Method**](https://www.sciencedirect.com/topics/computer-science/cosine-similarity) is a very popular method.
@@ -49,6 +52,7 @@ Fill in the mask!
 		- `math.log(target_probability/prior_probability)`
 
 Do this for two targets, ('he' and 'she'), and compare the relative disparities. If the relative differences are unequal this means that the attributes we masked had a biased effect on the targets, causing their relative likelihood to shift.
+
 ## Assignment
 ### Interactive portion
 This portion of the assignment should be performed in a live python interpreter or within a python notebook.
