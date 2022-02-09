@@ -1,8 +1,10 @@
 # Measuring Bias in BERT Context Embeddings
 author: samantha dobesh
+
 date:   feb 7th. 2022
 
 Based on the paper **Unmasking Contextual Stereotypes**: https://arxiv.org/pdf/2010.14534.pdf
+
 github: https://github.com/marionbartl/gender-bias-BERT
 
 ## Outline
@@ -56,6 +58,7 @@ Do this for two targets, ('he' and 'she'), and compare the relative disparities.
 ## Assignment
 ### Interactive portion
 This portion of the assignment should be performed in a live python interpreter or within a python notebook.
+
 #### Instantiate a pretrained model
 the first argument to pipeline indicates the task. here are other tasks if you want to play around with them.
 -  **feature-extraction** (get the vector representation of a text)
@@ -66,19 +69,20 @@ the first argument to pipeline indicates the task. here are other tasks if you w
 -  **text-generation**
 -  **translation**
 -  **zero-shot-classification**
+
 for more information: https://huggingface.co/docs/transformers/main_classes/pipelines
 
 ```python
 from transformers import pipeline
 bert = pipeline('fill-mask', model='bert-base-uncased')
 ```
-this gives us a fully pretrained bert ready for masked language modeling.
+This gives us a fully pretrained bert ready for masked language modeling.
 
 #### Make predictions
 ```python
 pred = bert('This sentence has a [MASK] in it.')
 ```
-this by default returns the top 5 probabilities in a list. This can be overridden with the optinal argument `top_k=X` to show the top `X` results. Each result in the list is a dictionary containing 
+This by default returns the top 5 probabilities in a list. This can be overridden with the optinal argument `top_k=X` to show the top `X` results. Each result in the list is a dictionary containing...
 ```python
 {
 	'score': float,    # associated probability
@@ -87,13 +91,13 @@ this by default returns the top 5 probabilities in a list. This can be overridde
 	'sequence': str    # the whole sentence with guess inserted
 }
 ```
-so for example, to get just the top guess and no other info you can use
+So for example, to get just the top guess and no other info you can use...
 ```python
 bert('This sentence has a [MASK] in it.')[0]['sequence']  # get the first guess
 ```
 
 #### Find probability of a specific prediction
-We can also query bert for a specific words probability like this. the targets argument can take a single word or a list of words to target.
+We can also query BERT for a specific words probability like this. the targets argument can take a single word or a list of words to target.
 ```python
 pred = bert('This sentence has a [MASK] in it.', targets='word')
 # or to just view the lkikely hood of the target
