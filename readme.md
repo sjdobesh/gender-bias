@@ -177,7 +177,7 @@ Now try correlating matching sentences and look for gender disparities.
 ####  Fine Tune a layer using the GAP
 **note:** Perhaps left as a task for the interested student?
 
-The gender swapped GAP is corpus where every sentence has professions and names swapped to corresponding gender. This counter balances the issue in the original BERT model, insuring gender will not impact these predictions.
+The gender swapped GAP is corpus where every sentence has professions and names swapped to the opposite gender. This counter balances the issue in the original BERT model, insuring gender will not impact these predictions.
 
 `git clone git@github.com:allenai/dont-stop-pretraining.git`
 Use the `mask_tokens()` function and inverted GAP to create fine tuning material from inverted GAP.
