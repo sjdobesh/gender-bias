@@ -9,9 +9,9 @@ github: https://github.com/marionbartl/gender-bias-BERT
 
 ## Outline
 ### Learning objectives
-- Learn how bert internalizes unintended gender biases from training
+- Learn how BERT internalizes unintended gender biases from training
 - Learn how how we can fine tune a layer to correct these biases using Counterfactual Data Substitution (CDS)
-- Consider the wider impact of biases on protected groups, like racial or gender minorities, elders, and people with disabilities, and how we can cultivate our datasets to support these goals.
+- Consider the wider impact of biases on protected groups, like racial or gender minorities, elders, and people with disabilities, and how we can cultivate our datasets to support and protect these people.
 
 ### Activities
 - Reading on embeddings and transformers. Unsure how much of this will be review for students.
@@ -29,7 +29,7 @@ Static embeddings are how a model processes a word on its own. Context embedding
 
 ### What is masked language modeling?
 Masked language modeling is where we take some model trained on the english language and the "mask" out words and ask the model to guess them. It is like a fill in the blank question. We can learn alot about these models based on what liklihoods it assigns different words.
-* [**Masked Language Modeling with Bert**](https://towardsdatascience.com/masked-language-modelling-with-bert-7d49793e5d2c)
+* [**Masked Language Modeling with BERT**](https://towardsdatascience.com/masked-language-modelling-with-bert-7d49793e5d2c)
 
 
 ### How do transformers make an embedding?
@@ -76,7 +76,7 @@ for more information: https://huggingface.co/docs/transformers/main_classes/pipe
 from transformers import pipeline
 bert = pipeline('fill-mask', model='bert-base-uncased')
 ```
-This gives us a fully pretrained bert ready for masked language modeling.
+This gives us a fully pretrained BERT ready for masked language modeling.
 
 #### Make predictions
 ```python
@@ -177,7 +177,7 @@ Now try correlating matching sentances and look for gender disparities.
 ####  Fine Tune a layer using the GAP
 perhaps left as a task for the interested student?
 
-The gender swapped GAP is corpus where every sentence has professions and names swapped to corresponding gender. This counter balances the issue in the original bert model, insuring gender will not impact these predictions.
+The gender swapped GAP is corpus where every sentence has professions and names swapped to corresponding gender. This counter balances the issue in the original BERT model, insuring gender will not impact these predictions.
 
 `git clone git@github.com:allenai/dont-stop-pretraining.git`
 Use the `mask_tokens()` function and inverted GAP to create fine tuning material
