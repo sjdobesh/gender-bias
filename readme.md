@@ -3,6 +3,7 @@ author: samantha dobesh
 date:   feb 7th. 2022
 
 Based on the paper **Unmasking Contextual Stereotypes**: https://arxiv.org/pdf/2010.14534.pdf
+github: https://github.com/marionbartl/gender-bias-BERT
 
 ## Outline
 ### Learning objectives
