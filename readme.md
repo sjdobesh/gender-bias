@@ -1,7 +1,7 @@
 # Measuring Bias in BERT Context Embeddings
-author: Samantha Dobesh
+Author: Samantha Dobesh
 
-date:   Feb 7th. 2022
+Date:   Feb 7th. 2022
 
 Based on the paper **Unmasking Contextual Stereotypes**: https://arxiv.org/pdf/2010.14534.pdf
 
