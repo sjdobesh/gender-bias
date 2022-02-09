@@ -175,18 +175,19 @@ Now try correlating matching sentences and look for gender disparities.
 
 ## Extra credit?
 ####  Fine Tune a layer using the GAP
-perhaps left as a task for the interested student?
+**note:** Perhaps left as a task for the interested student?
 
 The gender swapped GAP is corpus where every sentence has professions and names swapped to corresponding gender. This counter balances the issue in the original BERT model, insuring gender will not impact these predictions.
 
 `git clone git@github.com:allenai/dont-stop-pretraining.git`
-Use the `mask_tokens()` function and inverted GAP to create fine tuning material
-Fine tune the model to reduce these biases.
+Use the `mask_tokens()` function and inverted GAP to create fine tuning material from inverted GAP.
 
-1. Import sentence data
-2. Tokenize the data
-3. Create mask array
-4. Create a PyTorch dataset and dataloader class
-5. for epoch in range(epochs): train!
-6. save a checkpoint
-7. load checkpoint and measure BEC-Pro again
+Fine tune the model to reduce biases.
+
+1. Import sentence data.
+2. Tokenize the data.
+3. Create mask array.
+4. Create a PyTorch dataset and dataloader class.
+5. For epoch in range(epochs): train!
+6. Save a checkpoint.
+7. Load checkpoint and measure BEC-Pro again.
