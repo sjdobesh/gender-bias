@@ -174,7 +174,7 @@ for row in df.iloc:  # remember, anything with an index is iterable
 Now try correlating matching sentences and look for gender disparities.
 
 ## Extra Credit(?)
-####  Fine tune a layer using the Gender Ambiguos Pronouns (GAP) corpus.
+####  Fine tune a layer using the Gender Ambiguous Pronouns (GAP) corpus.
 **NOTE:** Perhaps left as a task for the interested student?
 
 The gender swapped GAP is corpus where every sentence has professions and names swapped to the opposite gender. This counter balances the issue in the original BERT model, insuring gender will not impact these predictions.
