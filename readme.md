@@ -15,10 +15,10 @@ GitHub: https://github.com/marionbartl/gender-bias-BERT
 
 ### Activities
 - Reading on embeddings and transformers. Unsure how much of this will be review for students.
-- interactive python portion
-	- learn the individual steps of how we measure a single embeddings bias scores
-- batch evaluate biases
-- fine tune layer to address issues? Possibly Extra? This part is pretty involved. Suitable for a final project.
+- Interactive python portion.
+	- Learn the individual steps of how we measure a single embeddings bias scores.
+- Batch evaluate biases.
+- Fine tune layer to address issues? *possibly Extra? This part is pretty involved. Suitable for a final project.*
 
 ## Supplementary material
 ### Context embedding vs static embedding: why do we want context embeddings?
@@ -40,17 +40,17 @@ Masked language modeling is where we take some model trained on the English lang
 ### How can we measure an embedding?
 - [**Cosine Method**](https://www.sciencedirect.com/topics/computer-science/cosine-similarity) is a very popular method.
 - We will use a masked language modeling method for measuring bias.
-	1. take a sentence with a pronoun/gender marker and a profession.
+	1. Take a sentence with a pronoun/gender marker and a profession.
 		- 'he is a computer scientist.'
-	2. mask the pronoun/gender marker. this is called the target.
+	2. Mask the pronoun/gender marker. this is called the target.
 		- '\[MASK\] is a computer scientist.'
-	3. get the probability that the masked word would appear in this sentence.
+	3. Get the probability that the masked word would appear in this sentence.
 		- `target_probability = bert('[MASK] is a computer scientist', targets='he')[0]['score']`
-	4. mask the profession, including compound words as multiple masks.
+	4. Mask the profession, including compound words as multiple masks.
 		- '\[MASK\] is a \[MASK\] \[MASK\]'
-	5. get the probability that the target words appears if it didn't contain the biased words.
+	5. Get the probability that the target words appears if it didn't contain the biased words.
 		- `prior_probability = bert('[MASK] is a [MASK] [MASK]', targets='he')[0][0]['score']`
-	6. calculate the log score, indicating the relative change in likelihood.
+	6. Calculate the log score, indicating the relative change in likelihood.
 		- `math.log(target_probability/prior_probability)`
 
 Do this for two targets, ('he' and 'she'), and compare the relative disparities. If the relative differences are unequal this means that the attributes we masked had a biased effect on the targets, causing their relative likelihood to shift.
@@ -60,7 +60,7 @@ Do this for two targets, ('he' and 'she'), and compare the relative disparities.
 This portion of the assignment should be performed in a live python interpreter or within a python notebook.
 
 #### Instantiate a pretrained model
-the first argument to pipeline indicates the task. here are other tasks if you want to play around with them.
+The first argument to pipeline indicates the task. here are other tasks if you want to play around with them.
 -  **feature-extraction** (get the vector representation of a text)
 -  **ner** (named entity recognition)
 - **question-answering**
@@ -70,7 +70,7 @@ the first argument to pipeline indicates the task. here are other tasks if you w
 -  **translation**
 -  **zero-shot-classification**
 
-for more information: https://huggingface.co/docs/transformers/main_classes/pipelines
+For more information: https://huggingface.co/docs/transformers/main_classes/pipelines
 
 ```python
 from transformers import pipeline
