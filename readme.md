@@ -3,25 +3,25 @@ Author: Samantha Dobesh
 
 Date:   Feb 7th. 2022
 
-Based on the paper **Unmasking Contextual Stereotypes**: https://arxiv.org/pdf/2010.14534.pdf
+Based on: [**Unmasking Contextual Stereotypes**](https://arxiv.org/pdf/2010.14534.pdf)
 
 GitHub: https://github.com/marionbartl/gender-bias-BERT
 
 ## Outline
 ### Learning objectives
-- Learn how BERT internalizes unintended gender biases from training
-- Learn how how we can fine tune a layer to correct these biases using Counterfactual Data Substitution (CDS)
+- Learn how BERT internalizes unintended gender biases from training.
+- Learn how how we can fine tune a layer to correct these biases using Counterfactual Data Substitution (CDS) on the Gender Ambiguous Pronoun (GAP) corpus.
 - Consider the wider impact of biases on protected groups, like racial or gender minorities, elders, and people with disabilities, and how we can cultivate our datasets to support and protect these people.
 
 ### Activities
-- Reading on embeddings and transformers. Unsure how much of this will be review for students.
+- Supplementary reading on embeddings and transformers. Unsure how much of this will be review for students.
 - Interactive python portion.
 	- Learn the individual steps of how we measure a single embeddings bias scores.
 - Batch evaluate biases.
-- Fine tune layer to address issues? **NOTE** *Possibly extra credit? This part is pretty involved. Suitable for a final project.*
+- Fine tune layer to address issues? **NOTE:** *Possibly extra credit? This part is pretty involved. Suitable for a final project.*
 
-## Supplementary material
-### Context embedding vs static embedding: why do we want context embeddings?
+## Supplementary Material
+### Context embedding vs static embedding: Why do we want context embeddings?
 Static embeddings are how a model processes a word on its own. Context embeddings show how a model processes a string of words to generate context. This is very important for detecting bias as this is highly context dependent. Words like 'queer', 'disabled', or 'black' can have very different implications based on who is using them and in reference to what. Contextual embeddings help capture this relationship.
 
 * [**From Static Embedding to Contextualized Embedding**](https://ted-mei.medium.com/from-static-embedding-to-contextualized-embedding-fe604886b2bc)
@@ -173,9 +173,9 @@ for row in df.iloc:  # remember, anything with an index is iterable
 
 Now try correlating matching sentences and look for gender disparities.
 
-## Extra credit?
-####  Fine Tune a layer using the GAP
-**note:** Perhaps left as a task for the interested student?
+## Extra Credit(?)
+####  Fine tune a layer using the Gender Ambiguos Pronouns (GAP) corpus.
+**NOTE:** Perhaps left as a task for the interested student?
 
 The gender swapped GAP is corpus where every sentence has professions and names swapped to the opposite gender. This counter balances the issue in the original BERT model, insuring gender will not impact these predictions.
 
