@@ -97,7 +97,7 @@ bert('This sentence has a [MASK] in it.')[0]['sequence']  # get the first guess
 ```
 
 #### Find probability of a specific prediction
-We can also query BERT for a specific words probability like this. the targets argument can take a single word or a list of words to target.
+We can also query BERT for a specific words probability like this. The targets argument can take a single word or a list of words to target.
 ```python
 pred = bert('This sentence has a [MASK] in it.', targets='word')
 # or to just view the lkikely hood of the target
