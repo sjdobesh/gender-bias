@@ -42,7 +42,7 @@ Masked language modeling is where we take some model trained on the English lang
 - We will use a masked language modeling method for measuring bias.
 	1. Take a sentence with a pronoun/gender marker and a profession.
 		- 'he is a computer scientist.'
-	2. Mask the pronoun/gender marker. this is called the target.
+	2. Mask the pronoun/gender marker. This is called the target.
 		- '\[MASK\] is a computer scientist.'
 	3. Get the probability that the masked word would appear in this sentence.
 		- `target_probability = bert('[MASK] is a computer scientist', targets='he')[0]['score']`
