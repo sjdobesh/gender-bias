@@ -18,7 +18,7 @@ GitHub: https://github.com/marionbartl/gender-bias-BERT
 - Interactive python portion.
 	- Learn the individual steps of how we measure a single embeddings bias scores.
 - Batch evaluate biases.
-- Fine tune layer to address issues? *possibly Extra? This part is pretty involved. Suitable for a final project.*
+- Fine tune layer to address issues? *possibly extra? This part is pretty involved. Suitable for a final project.*
 
 ## Supplementary material
 ### Context embedding vs static embedding: why do we want context embeddings?
